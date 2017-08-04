@@ -1,3 +1,5 @@
+const find = require('./tree');
+
 var a = [7, 8, 5, 10, 11, 1, 11, 111, 2];
 
 for (var startEqualingIndex = 0; startEqualingIndex < a.length; startEqualingIndex++) {
@@ -11,5 +13,7 @@ for (var startEqualingIndex = 0; startEqualingIndex < a.length; startEqualingInd
 }
 
 a.forEach(function (item) {
-    console.log(item)
+    // console.log(item)
 });
+
+console.log(find('a ab adc abcd abcde abcdef bc bcd cd cde cdf ', 'abcde'));

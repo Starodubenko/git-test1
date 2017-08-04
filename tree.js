@@ -3,6 +3,15 @@ const FIND_STRING = 'abcde';
 const SPLIT_WORD_SYMBOL = ' ';
 let tree = {};
 
+const find = (where, what) => {
+    where.split(SPLIT_WORD_SYMBOL).forEach(word => {
+        addWord(word);
+    });
+
+    return findItem(what, tree);
+};
+
+
 const addWord = (word) => {
     let currentNode = tree;
     word.split('').forEach((char, index) => {
@@ -17,10 +26,6 @@ const addWord = (word) => {
     })
 };
 
-STRING.split(SPLIT_WORD_SYMBOL).forEach(word => {
-    addWord(word);
-});
-
 const findItem = (string, node) => {
     const array = string.split('');
     const checkedLetter = array.shift();
@@ -31,4 +36,6 @@ const findItem = (string, node) => {
     return node.index;
 };
 
-console.log(findItem(FIND_STRING, tree));
+// console.log(findItem(FIND_STRING, tree));
+
+module.exports = find;
